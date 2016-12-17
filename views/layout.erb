@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="shop.js"></script>
+	<script type="text/javascript" src="javascript/cart.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet">
+	<title><%= @title %></title>
+</head>
+<body> 
+	<img id="logo2" src="images/logo.png">
+	<div id="cover">
+	<div id = socialmedia>
+		<ul>
+			<li><a href="https://www.facebook.com/venus.tyan.1"> <img src="images/facebook.png" alt="facebooklogo"></a></li>
+			<li><a href="https://twitter.com/venustyan"> <img src="images/twitter.png" alt="twitterlogo"></a></li>
+			<li><a href="https://instagram.com/venustyan1/"> <img src="images/instagram.png" alt="intagramlogo"></a></li>
+			<li><a href="https://www.pinterest.com/venustyan1//"> <img src="images/pinterest.png" alt="pinterestlogo"></a></li>
+			<li><a href="http://venustyan.tumblr.com/"> <img src="images/tumblr.png" alt="tumblrlogo"></a></li>
+		</ul>
+	</div>
+	<a href="/cart"><img id="cart" src="images/cart.png"></a>
+	<img id="mailicon" src="images/mail.png">
+	<h4 id="contactus">CONTACT US: 1.347.458.6929</h4>
+	<div id = navbar>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/shop">Shop</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/cart">Cart</a></li>
+		</ul>
+	</div>
+	<% if flash[:message] %>
+	<h1 id="emailmessage"><%= flash[:message] %>
+	<% end %>
+	<div id="modal">
+		<div id="close">X</div>
+			<h1 id="h1contact">Contact Us</h1>
+			<h5 id="h5instructions">Please enter your name, email and message</h5>
+			<form method="POST" action="/">
+				<table id="table">
+					<tr>
+						<td id="name"><label for="name">Name</label></td>
+						<td><input type="text" name="name" placeholder="Enter Name Here"></td>
+						<td id="email"><label for="email">Email</label></td>
+						<td><input type="text" name="email" placeholder="Enter Email Here"></td>
+					</tr>
+					<tr>
+						<td colspan="4"><textarea rows="8" cols="60"></textarea></td>
+					</tr>
+					<tr>
+  						<td colspan="2"><input type="submit"></td>
+  					</tr>
+				</table>
+			</form>
+		</div>
+		</div>
+<%= yield %> 
+	<div id = bottomnavbar>
+		<div class="col-lg-4">
+			<h3>Navigation</h3>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/shop">Shop</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/cart">Cart</a></li>
+		</ul>
+		</div>
+		<div class="col-lg-4">
+			<h3>Featured Products</h3>
+			<h6>LITTE BLACK CREPE DRESS<img id="prod" src="images/cld0014.jpg"></h6>
+			<h6>WHITE FLORAL EMBROIDERED DRESS<img id="prod" src="images/cld0016.jpg"></h6>
+			<h6>FAIRY WHITE DRESS<img id="prod" src="images/cld0017.jpg"></h6>
+		</div>
+		<div class="col-lg-4">
+			<h3>Subscribe</h3>
+      		<p>Subscribe to our newsletter for sales and trends<p>
+    		<div class="bottomsubscription">
+    		<form action="index.html" method="post" class="subscribe-form">
+      			<input type="email" name="email" class="subscribe-input" placeholder="Email address">
+      			<button type="submit" class="subscribe-submit">Subscribe</button>
+    		</form>
+    		<footer>&copy Merging Styles</footer>
+    		</div>
+		</div>
+
+	</div>
+	
+</body>
+</html>
